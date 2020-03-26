@@ -11,12 +11,13 @@ import com.rujirakongsomran.bubblescrollbars.Adapter.MyAdapter;
 import com.trendyol.bubblescrollbarlib.BubbleScrollBar;
 import com.trendyol.bubblescrollbarlib.BubbleTextProvider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    List<String> listData;
+    List<String> listData = new ArrayList<>();
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(listData);
         recyclerView.setAdapter(new MyAdapter(listData));
 
-        scrollBar = (BubbleScrollBar) findViewById(R.id.scrollBar);
+        scrollBar = (BubbleScrollBar) findViewById(R.id.bubbleScroll);
         scrollBar.attachToRecyclerView(recyclerView);
         scrollBar.setBubbleTextProvider(new BubbleTextProvider() {
             @Override
